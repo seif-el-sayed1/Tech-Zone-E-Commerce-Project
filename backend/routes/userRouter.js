@@ -14,7 +14,7 @@ router.get('/google', passport.authenticate('google', { scope: ['profile', 'emai
 
 router.get('/google/callback', passport.authenticate('google', {
     session: false,
-    failureRedirect: 'https://tech-zone-iota.vercel.app/auth'
+    failureRedirect: 'http://localhost:5173/login'
 }), (req, res) => {
     const {token, isNewUser} = req.user;
     res.cookie('token', token, {
@@ -24,7 +24,7 @@ router.get('/google/callback', passport.authenticate('google', {
         sameSite: 'none'
     });
     const status = isNewUser ? 'signup_success' : 'login_success';
-    res.redirect('https://tech-zone-iota.vercel.app');
+    res.redirect('http://localhost:5173');
 });
 
 // register 

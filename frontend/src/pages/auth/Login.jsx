@@ -10,7 +10,7 @@ export const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleGoogleLogin = () => {
-        window.location.href = 'https://tech-zone-backend.vercel.app/api/auth/google'; 
+        window.location.href = 'http://localhost:3000/api/auth/google'; 
     };
 
     const {
